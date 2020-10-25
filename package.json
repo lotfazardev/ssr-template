@@ -4,7 +4,8 @@
   "description": "This is a simple SSR server template with (ExpressJs, ReactJs & Redux)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "webpack --config webpack.server.js",
+    "start" : "node ./build/bundle.js"
   },
   "repository": {
     "type": "git",
