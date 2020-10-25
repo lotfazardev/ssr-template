@@ -4,8 +4,8 @@ module.exports = {
     // build bundle for nodeJs
     target: "node",
 
-    // Entery point
-    entery: "./src/index.js",
+    // Entry point
+    entry: "./src/index.js",
 
     // output point
     output: {
@@ -17,9 +17,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js?$/,
                 loader: 'babel-loader',
-                excluder: /node_modules/,
+                exclude: /node_modules/,
                 options: {
                     presets: [
                         'react',
