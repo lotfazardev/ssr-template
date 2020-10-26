@@ -4,7 +4,7 @@
   "description": "This is a simple SSR server template with (ExpressJs, ReactJs & Redux)",
   "main": "index.js",
   "scripts": {
-    "prestart": "webpack --config webpack.server.js",
+    "prestart": "webpack --config webpack.server.js && webpack --config webpack.client.js",
     "start" : "node ./build/bundle.js"
   },
   "repository": {
