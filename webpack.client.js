@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
     // Entry point
-    entry: "./src/client/App.js",
+    entry: "./src/client/client.js",
 
     // output point
     output: {

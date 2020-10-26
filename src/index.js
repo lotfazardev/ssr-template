@@ -4,11 +4,22 @@ const app = express();
 // frontEnd dependencies
 const React = require('react');
 const renderToString = require('react-dom/server').renderToString;
-const App = require('./client/App').default;
+const App = require('./client/reactSrc/App').default;
+
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
     const content = renderToString(<App />);
-    res.send(content)
+    const html = `
+    <html>
+        <head></head>
+        <body>
+            <div id="root">${content}</div>
+            <script src="bundle.js"></script>
+        </body>
+    </html>
+    `;
+    res.send(html);
 });
 
 app.listen(3000, ()=>{
